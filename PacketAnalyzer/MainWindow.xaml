@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PacketAnalyzer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Closing="Window_Closing"
+        Title="MainWindow" Height="450" Width="800" FontFamily="D2Coding">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button Content="시작" Click="StartButton_Click" Padding="10"/>
+            <Button Content="종료" Click="EndButton_Click" Padding="10"/>
+            <Button Content="초기화" Click="ResetButton_Click" Padding="10"/>
+        </StackPanel>
+        <DockPanel DockPanel.Dock="Top"  >
+            <Button Content="필터적용" DockPanel.Dock="Left"  Click="FliterButton_Click" Padding="10,0" Width="190"/>
+            <TextBox x:Name="fliter"  AcceptsTab="True" Height="20" TextChanged="fliter_TextChanged"/>
+        </DockPanel>
+        <TextBox x:Name="header" DockPanel.Dock="Top"  AcceptsTab="True" IsReadOnly="True" Height="20"/>
+        <TextBox x:Name="Log" VerticalScrollBarVisibility="Visible" AcceptsTab="True"/>
+    </DockPanel>
 </Window>
